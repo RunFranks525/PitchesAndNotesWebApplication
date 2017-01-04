@@ -1,0 +1,58 @@
+﻿@model Dictionary<string, PitchesAndNotes.Models.Member>
+@{
+    ViewBag.Title = "Contact";
+}
+<section class="titularRow photoHeader">
+
+</section>
+<section class="row">
+    <section class="col-xs-12 col-xs-push-2">
+        <hgroup>
+            <h2>Contact Us</h2>
+        </hgroup>
+    </section>
+</section>
+<section class="row">
+    <section class="col-xs-12 col-xs-push-2">
+
+        <p class="contactBlock">
+             <strong>@Model["President"].Name - President </strong>
+            <br />
+            <a href="emailto:pitchesacappella@gmail.com">pitchesacappella@gmail.com</a>
+        </p>
+     
+        <p class="contactBlock">
+            <strong>@Model["Music Director"].Name – Music Director</strong>
+            <br />
+            <a href="emailto:musicpitchesacappella@gmail.com">musicpitchesacappella@gmail.com</a>
+        </p>
+
+        <p class="contactBlock">
+            <strong>@Model["Business Manager"].Name – Business Manager</strong>
+            <br />
+            <a href="emailto:pitchesacappella@gmail.com">pitchesacappella@gmail.com</a>
+        </p>
+
+        <p class="contactBlock">
+            <strong>@Model["Advertising and Social Media Public Relations"].Name – Public Relations and Social Media</strong>
+            <br />
+            <a href="pitchesandnotes.com">Pitches and Notes Website</a>
+            <br />
+            <a href="www.facebook.com/pitchesandnotes">Pitches and Notes Facebook</a>
+            <br />
+            <a href="www.twitter.com/acapitches">Pitches and Notes Twitter</a>
+        </p>
+
+        @*<p class="contactBlock">
+            <strong>Sabrina VandenHeuvel – Public Relations and Social Media</strong>
+            <br />
+            <a href="pitchesandnotes.com">Pitches and Notes Website</a>
+            <br />
+            <a href="www.facebook.com/pitchesandnotes">Pitches and Notes Facebook</a>
+            <br />
+            <a href="www.twitter.com/acapitches">Pitches and Notes Twitter</a>
+        </p>*@
+        <br />
+        <br />
+    </section>
+</section>

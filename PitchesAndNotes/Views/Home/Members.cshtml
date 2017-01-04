@@ -1,0 +1,90 @@
+﻿@model List<PitchesAndNotes.Models.Member>
+@{
+    ViewBag.Title = "Members";
+}
+
+<section class="titularRow photoHeader">
+    <div class="row">
+
+    </div>
+</section>
+<section class="row">
+    <section class="col-xs-4 col-xs-push-2">
+        <hgroup>
+            <h2>Current Members</h2>
+        </hgroup>
+    </section>
+</section>
+@{
+    for(int i = 0; i < Model.Count; i++)
+    {
+        var classType = "even";
+        var currentMember = Model[i];
+        var srcString = "/Content/headshots/" + currentMember.Id + ".jpg";
+        if (i % 2 == 0)
+        {
+            classType = "odd";
+        }
+            <section class="row @classType">
+                <section class="col-xs-6 col-md-push-2">
+                    <section class="row">
+                        <section class="col-xs-4">
+                            <img src=@srcString class="img-responsive" />
+                        </section>
+                        <section class="col-xs-8">
+                            <hgroup>
+                                <h4>@currentMember.Name</h4>
+                                @if (currentMember.Position != null)
+                                {
+                                    <h5><i>@currentMember.Position</i></h5>
+                                }
+                            </hgroup>
+                            <section class="memInfo">
+                                @if (currentMember.Classification != null)
+                                {
+                                    <p><strong>Pitch or Note? </strong>@currentMember.Classification</p>
+                                }
+                                @if (currentMember.HomeTown != null)
+                                {
+                                    <p><strong>Hometown: </strong>@currentMember.HomeTown</p>
+                                }
+                                @if (currentMember.Grade == 1)
+                                {
+                                    <p><strong>Year in School? </strong>Freshman</p>
+                                }
+                                else if (currentMember.Grade == 2)
+                                {
+                                    <p><strong>Year in School? </strong>Sophomore</p>
+                                }
+                                else if (currentMember.Grade == 3)
+                                {
+                                    <p><strong>Year in School? </strong>Junior</p>
+                                }
+                                else if (currentMember.Grade == 4)
+                                {
+                                    <p><strong>Year in School? </strong>Senior</p>
+                                }
+                                <p><strong>Major: </strong>@currentMember.Major</p>
+                                <p><strong>Favorite Musical Artist: </strong>@currentMember.FavoriteArtist</p>
+                                @if (currentMember.BucketList != null)
+                                {
+                                     <p><strong>Something on your bucket list? </strong>@currentMember.BucketList</p>
+                                }
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+    }
+}
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $(".lazy").lazyload({
+                effect: "fadeIn"
+            });
+        });       
+    </script>
+
+    }
+
